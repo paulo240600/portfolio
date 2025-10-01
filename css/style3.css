@@ -227,6 +227,10 @@ footer {
         text-align: center;
     }
 
+    main {
+        padding: 0;  /* removes all padding on mobile */
+    }
+
     nav {
         word-spacing: normal;
         margin-top: 10px;
