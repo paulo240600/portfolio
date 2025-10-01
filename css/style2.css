@@ -143,16 +143,16 @@ footer {
 
     .fform,
     .sform {
-        width: 90% !important;   /* force override */
-        max-width: 100%;         /* keep them inside screen */
+        width: 90% !important;  
+        max-width: 100%;         
         padding: 15px;
         font-size: 16px;
-        margin: 10px auto;       /* center them */
+        margin: 10px auto;      
     }
 
     .fform h1,
     .sform h1 {
-        font-size: 28px; /* smaller heading */
+        font-size: 28px; 
     }
 
     .fform p,
