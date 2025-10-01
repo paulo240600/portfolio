@@ -141,3 +141,63 @@ footer {
 .footerright img:hover {
     transform: scale(1.02);
 }
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        word-spacing: normal;
+        margin-top: 10px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px 10px;
+        font-size: 18px;
+    }
+
+    .main {
+        flex-direction: column;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .image {
+        height: 560px;
+    }
+
+    .main .text {
+      padding-top: 1px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .ptext {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .button {
+        font-size: 20px;
+        padding: 8px 25px;
+        margin: 15px 5px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 20px;
+    }
+
+    .footerright img {
+        height: 180px;
+        width: auto;
+        margin-top: 15px;
+    }
+}
