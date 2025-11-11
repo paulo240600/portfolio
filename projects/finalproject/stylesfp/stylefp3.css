@@ -1,0 +1,205 @@
+.container_12 {
+    width: 100%;
+    margin: 0 auto;
+    background-color: rgb(240, 240, 240);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+header {
+    background-color: rgb(40, 142, 81);
+    text-align: center;
+    color: rgb(250, 250, 250);
+    border-radius: 10px;
+    font-size: 35px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0 auto 20px auto;
+    padding: 10px 5px; 
+}
+
+nav {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: rgb(249, 241, 241);
+    margin-right: 15px;
+    margin-left: 15px;
+    font-size: 2.5rem;
+}
+
+body {
+    background-color: rgb(182, 182, 182);
+}
+
+header:hover, iframe:hover, footer:hover, #encuesta:hover, nav:hover {
+    transform: scale(1.02);
+}
+
+.grid_6 {
+    vertical-align: top;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+#toppart {
+    align-items: center;
+}
+
+iframe {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 450px;
+    height: 350px;
+    border: black;
+}
+
+#parktext {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+}
+
+#maintitle {
+    font-size: 4rem;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1 {
+    font-size: 1.3rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+footer {
+    color: rgb(255, 255, 255);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: rgb(40, 142, 81);
+    padding: 1px 1px 1px 1px;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#encuesta {
+    background-color: rgb(224, 252, 221);
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: -4px 0px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+    clear: both;
+    margin: 20px 0;
+}
+
+#encuesta input {
+    margin-bottom: 10px;
+}
+
+select {
+    font-size: 20px;
+}
+
+select option {
+    font-size: 12px;
+}
+
+@media screen and (max-width: 768px) {
+    .grid_6, .grid_12 {
+      width: 100% !important;
+      float: none;
+      display: block;
+      box-sizing: border-box;
+    }
+  
+    #img iframe {
+      width: 100%;
+      height: 120vw;
+    }
+
+    #parking h1 {
+        font-size: 2.5rem;
+    }
+
+    #parking p, #parking ul {
+        font-size: 2.3rem;
+        line-height: 3rem;
+    }
+  
+    #encuesta textarea,
+    #encuesta input[type="text"],
+    #encuesta input[type="email"],
+    #encuesta input[type="name"] {
+      width: 90%;
+      max-width: 100%;
+    }
+  
+    body {
+      padding: 10px;
+      padding-right: 55px;
+    }
+  
+    #maintitle {
+      font-size: 5.5rem;
+      margin-top: 30px;
+    }
+
+    #parking h1 {
+        align-items: center;
+        text-align: center;
+    }
+  
+    nav a {
+      display: block;
+      font-size: 2.5rem;
+      line-height: 4rem;
+    }
+  
+    h2 {
+      font-size: 1.4rem;
+    }
+  
+    #encuesta h2 {
+        font-size: 2.3rem;
+    }
+
+    #encuesta fieldset, #encuesta input, #encuesta p, #encuesta input {
+        font-size: 2.2rem;
+    }
+
+    #encuesta p, #encuesta input {
+        margin-bottom: 10px;
+    }
+
+    #encuesta input {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    #encuesta textarea {
+        height: 10rem;
+    }
+
+    footer {
+        font-size: 1.4rem;
+    }
+
+    select {
+        font-size: 40px;
+    }
+    
+    select option {
+        font-size: 12px;
+    }
+  }

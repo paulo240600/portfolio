@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    padding: 0;
+    animation: fadeUp 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.bg {
+    height: 60vh;
+    background: linear-gradient(rgba(48, 46, 38, 0.181)), url(piura3.jpg) center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.bg h1 {
+    font-size: 3rem;
+    padding-bottom: 25px;
+}
+
+.bg p {
+    font-size: 1.4rem;
+}
+
+.gradient {
+    background: linear-gradient(to bottom, #d79f56, #f67280);
+    color: white;
+    text-align: center;
+    padding: 4rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gradient:hover {
+    background: linear-gradient(to bottom, #da9f52, #f66977);
+}
+
+.gradient h2 {
+    margin-bottom: 1rem;
+    font-size: 30px;
+}
+
+.gradient p {
+    font-size: 1.2rem;
+    max-width: 750px;
+}
+
+.solid {
+    background-color: #c06c84;
+    color: white;
+    text-align: center;
+    padding: 4rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.solid:hover {
+    background-color: #c06680;
+}
+
+.solid h2 {
+    margin-bottom: 1rem;
+    font-size: 30px;
+}
+
+.solid p {
+    font-size: 1.2rem;
+    max-width: 750px;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    background-color: #6c5b7b;
+    margin: 0;
+    padding: 0;
+}
+
+footer:hover {
+    background-color: #6a567b;
+}
+
+footer p {
+    margin: 0;
+    padding: 20px;
+    font-size: 1rem;
+}

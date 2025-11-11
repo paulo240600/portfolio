@@ -1,0 +1,841 @@
+/* =========================================
+   CSS Reset
+   ========================================= */
+   body, header, nav, main, footer, h1, h2 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  
+  /* =========================================
+     Global Color Palette
+     ========================================= */
+  :root {
+    --royal-blue: #0B3D91;
+    --gold: #FFD700;
+    --white: #ffffff;
+    --dark-gray: #333333;
+  }
+  
+  /* =========================================
+     Global Reset & Body Styling
+     ========================================= */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-gray);
+    background-color: var(--white);
+    animation: fadeUp 0.8s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+  
+  .container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  /* =========================================
+     Header & Navigation
+     ========================================= */
+  .site-header {
+    background-color: var(--royal-blue);
+    padding: 1rem 0;
+  }
+  
+  .logo {
+    color: var(--white);
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: -1.5rem;
+  }
+  
+  .main-nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .main-nav a:hover {
+    color: var(--gold);
+  }
+  
+  /* =========================================
+     Hero Section
+     ========================================= */
+  .hero {
+    background-image: url("../images/hero-placeholder.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+  }
+  
+  .hero::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(11, 61, 145, 0.6);
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Call-to-Action Button */
+  .btn {
+    background-color: var(--gold);
+    color: var(--royal-blue);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #e6c200;
+  }
+  
+  /* =========================================
+     General Sections
+     ========================================= */
+  .section {
+    padding: 3rem 0;
+    text-align: center;
+  }
+  
+  .section h2 {
+    color: var(--royal-blue);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+  
+  .section p,
+  .section ul {
+    color: var(--dark-gray);
+  }
+  
+  /* =========================================
+     Events List
+     ========================================= */
+  .events ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .events li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* =========================================
+     Footer
+     ========================================= */
+  .site-footer {
+    background-color: var(--royal-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+  }
+  
+  /* =========================================
+     Contact Info Section
+     ========================================= */
+  .contact-info {
+    text-align: left;
+    margin-bottom: 3rem;
+  }
+  
+  .contact-info h3 {
+    color: var(--royal-blue);
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+  
+  .contact-box {
+    flex: 1;
+    min-width: 280px;
+    background-color: #f5f5f5;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .contact-box ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .contact-box li {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  
+  .contact-box a {
+    color: var(--royal-blue);
+    text-decoration: none;
+  }
+  
+  .contact-box a:hover {
+    text-decoration: underline;
+  }
+  
+  /* =========================================
+     Contact Form Styling
+     ========================================= */
+  .form-section {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: left;
+  }
+  
+  .contact-form {
+    margin-top: 1.5rem;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--royal-blue);
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--royal-blue);
+    outline: none;
+  }
+  
+  .contact-form .btn {
+    background-color: var(--royal-blue);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-form .btn:hover {
+    background-color: #072e6d;
+  }
+  
+  /* =========================================
+     Events Page Styling
+     ========================================= */
+  .events-section ul.event-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+  
+  .events-section ul li {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+ /* =========================================
+   Events Section Columns - Spacing Update
+   ========================================= */
+.events-box {
+  background-color: #f4f4f4;
+  padding: 2.5rem;          /* consistent with other pages */
+  border-radius: 12px;
+  margin: 3rem 0;           /* match About/Resource spacing */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.events-columns {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;          /* stack columns on smaller screens */
+}
+
+.event-column {
+  flex: 1;
+  min-width: 300px;         /* prevent columns from getting too narrow */
+}
+
+.meeting-box img.meeting-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.expect-box h3 {
+  color: var(--royal-blue);
+  margin-bottom: 0.5rem;
+}
+
+.expect-box ul {
+  list-style: disc inside;
+  padding-left: 0;
+  line-height: 1.5;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .events-columns {
+    flex-direction: column;
+  }
+}
+
+  
+  /* =========================================
+     Join Us Section
+     ========================================= */
+  .join-wow {
+    background-color: #f4f4f4;
+    color: var(--dark-gray);
+    padding: 4rem 2rem;
+    border-radius: 12px;
+    margin-top: 4rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  }
+  
+  .join-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .join-left {
+    flex: 1 1 500px;
+  }
+  
+  .join-left h2 {
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+    color: var(--royal-blue);
+  }
+  
+  .join-left p {
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .join-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .join-features li {
+    font-size: 1.05rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  
+  .join-features li::before {
+    content: "✔️";
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  .join-wow-btn {
+    background-color: var(--gold);
+    color: var(--royal-blue);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    border: none;
+  }
+  
+  .join-wow-btn:hover {
+    background-color: #e6c200;
+  }
+  
+  .join-right {
+    flex: 1 1 400px;
+    text-align: center;
+  }
+  
+  .join-right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .join-container {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+  
+    .join-left h2 {
+      font-size: 2rem;
+    }
+  }
+  
+  /* =========================================
+     Upcoming Events Box Styling
+     ========================================= */
+  .events-box {
+    background-color: #f4f4f4;
+    padding: 2.5rem;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    text-align: left;
+  }
+  
+  .events-box h2 {
+    font-size: 2.3rem;
+    color: var(--royal-blue);
+    margin-bottom: 1.5rem;
+  }
+  
+  .event-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .event-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+  }
+  
+  .event-list li:last-child {
+    border-bottom: none;
+  }
+  
+  .event-date {
+    font-size: 0.95rem;
+    color: #666;
+  }
+  
+  /* =========================================
+     Resource Page Styling
+     ========================================= */
+  .resource-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+    justify-content: center;
+  }
+  
+  .resource-card {
+    background-color: #f4f4f4;
+    padding: 1.8rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    flex: 1 1 280px;
+    max-width: 320px;
+    color: var(--dark-gray);
+  }
+  
+  .resource-card h3 {
+    color: var(--royal-blue);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 0.5rem;
+  }
+  
+  .resource-card ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .resource-card li {
+    margin-bottom: 0.9rem;
+    font-size: 1.05rem;
+  }
+  
+  .resource-card a {
+    color: var(--royal-blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .resource-card a:hover {
+    color: var(--gold);
+    text-decoration: underline;
+  }
+  
+  /* Call to Action Section */
+  .join-us-section {
+    background-color: #0B3D91;
+    color: #ffffff;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(11, 61, 145, 0.4);
+  }
+  
+  .join-us-section h2,
+  .join-us-section p {
+    color: #ffffff;
+  }
+  
+  .join-us-section .btn {
+    background-color: var(--gold);
+    color: var(--royal-blue);
+    padding: 0.75rem 2rem;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    border: none;
+  }
+  
+  .join-us-section .btn:hover {
+    background-color: #e6c200;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .resource-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .resource-card {
+      max-width: 100%;
+    }
+  }
+  
+  /* =========================================
+     About Page Styling
+     ========================================= */
+  .about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .intro {
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+    color: var(--dark-gray);
+    line-height: 1.6;
+  }
+  
+  .mission, .values, .team {
+    margin-bottom: 3rem;
+  }
+  
+  .mission h3, .values h3, .team h3 {
+    color: var(--royal-blue);
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    border-bottom: 2px solid var(--gold);
+    display: inline-block;
+    padding-bottom: 0.3rem;
+  }
+  
+  /* =========================================
+     Core Values Section
+     ========================================= */
+    /* ===== Core Values Section & About Page Headings ===== */
+.about-container h2 { /* About Us */
+    text-align: left;
+    font-weight: bold;
+    color: var(--royal-blue);
+    border-bottom: none; /* remove underline */
+    margin-bottom: 1rem;
+  }
+.about-container h3 {      /* Our Mission, Our Core Values, Meet the Team */
+    text-align: left;       /* align left like Contact page headings */
+    font-weight: bold;      /* bold text */
+    color: var(--royal-blue);
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+}
+
+/* ===== Values Carousel Styling ===== */
+.values {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.values .values-title {
+    text-align: left !important;
+    margin-bottom: 2rem;
+    color: var(--royal-blue);
+}
+
+.values .container {
+    text-align: left; /* keeps carousel left-aligned */
+    padding-left: 0;
+}
+
+.value-box {
+    background-color: #f4f4f4;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: center; /* keep box content centered */
+}
+
+.value-box h4 {
+    color: var(--royal-blue);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.value-box p {
+    color: var(--dark-gray);
+    font-size: 1.1rem;
+}
+
+/* Carousel arrows styling */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(25%) sepia(95%) saturate(1676%) hue-rotate(200deg) brightness(92%) contrast(90%);
+}
+.carousel-inner {
+  display: flex; 
+  gap: 1rem; /* space between value boxes */
+  justify-content: flex-start; /* align items to left */
+}
+    
+  /* =========================================
+     Meet the Team Section
+     ========================================= */
+  /* =========================================
+   Meet the Team Section - 2 Left / 2 Right
+   ========================================= */
+.team {
+  padding: 3rem 0;
+  text-align: left;
+}
+
+.team h3 {
+  color: var(--royal-blue);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.team-members {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns for desktop */
+  gap: 1.5rem;
+  align-items: stretch; /* equal height */
+}
+
+/* Individual Member Box */
+.member {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ccc;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  background-color: #fafafa;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.member:hover {
+  box-shadow: 0 6px 15px rgba(11, 61, 145, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Initials Circle */
+.initials {
+  background-color: var(--royal-blue);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.4rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  user-select: none;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Member Info */
+.member-info h4 {
+  margin: 0;
+  color: var(--royal-blue);
+  font-size: 1.1rem;
+}
+
+.member-info p {
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+  color: var(--dark-gray);
+}
+
+/* Responsive Layout */
+@media (max-width: 992px) {
+  .team-members {
+    grid-template-columns: 1fr; /* single column on tablets/small screens */
+  }
+}
+/* =========================================
+   Multimedia Styling
+   ========================================= */
+.media-audio,
+.media-video {
+  text-align: left;
+  margin: 2rem 0;
+}
+
+.media-audio audio,
+.media-video video {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   Show / Hide Buttons
+   ========================================= */
+.btn-group {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#show-btn,
+#hide-btn {
+  background-color: var(--royal-blue);
+  color: var(--white);
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#show-btn:hover,
+#hide-btn:hover {
+  background-color: #072e6d;
+}
+
+.hidden {
+  display: none !important;
+}
+#club-info {
+  display: flex;
+  justify-content: center;  /* centers horizontally */
+  align-items: center;      /* centers vertically (optional if it’s short text) */
+  text-align: center;
+  margin: 1.5rem auto;      /* centers block horizontally */
+  background-color: #f4f4f4;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  max-width: 600px;         /* keeps it from stretching too wide */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
