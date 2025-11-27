@@ -1,9 +1,6 @@
-body {
-    background-image: url("../images/background.jpeg");
-    background-size: cover;      
-    background-position: center;  
-    background-repeat: no-repeat; 
-    background-attachment: fixed;
+body {    
+    background-position: center;
+    background-color: rgb(246, 246, 246);  
     opacity: 90%;
     animation: fadeUp 0.8s ease-in;
 }
@@ -38,29 +35,30 @@ nav a {
 }
 
 nav a:hover {
-    text-decoration: underline;
+    text-decoration: none;
     filter: drop-shadow(0 0 6px rgb(255, 255, 255));
 }
 
-.main {
+main {
     display: flex;
-    background-color: white;
-    width: 90%;
+    background-color: rgb(246, 246, 246); 
     margin: 40px auto; 
     gap: 1rem;
     margin-top: 1;
-    padding-right: 20px;
 }
 
-.main .text {
-    flex: 1 1 60%;
-    padding-top: 90px;
+main .text {
+    flex: 1 1 50%;
     text-align: center;
 }
 
 h1 {
     font-size: 60px;
     color: rgb(118, 3, 118);
+}
+
+.text {
+    padding-top: 35px;
 }
 
 .ptext {
@@ -89,7 +87,7 @@ h1 {
     background-color: purple;
     border: 2px solid;
     border-radius: 8px;
-    border-color: rgb(4, 175, 209);
+    border-color: rgb(64, 155, 226);
     text-decoration: none; 
     transition: all 0.3s ease;
     cursor: pointer;
@@ -99,34 +97,27 @@ h1 {
 
 .button:hover {
     transform: scale(1.02);
-    background-color: rgb(4, 175, 209);
+    background-color: rgb(64, 155, 226);
     border-color: purple;
     filter: drop-shadow(0 0 6px rgba(118, 3, 118, 0.5));
 }
 
 footer {
-    display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: black;
     color: white;
-    padding-left: 1rem;
     height: 0;
     font-size: 25px;
     border-radius: 10px;
-    height: 300px;
+    height: 390px;
     font-size: 25px;
-}
-
-.footerright img {
-    height: 350px;
-    width: 300px;
-    float: right;
-    align-items: center;
 }
 
 .footerleft {
     margin-top: 1px;
+    padding-left: 20px;
+    padding-top: 10px;
 }
 
 #allr {
@@ -134,13 +125,15 @@ footer {
     margin-bottom: 18px;
 }
 
-.Email {
+.Email, .github {
     text-decoration: none; 
     color: white;            
 }
 
-.footerright img:hover {
-    transform: scale(1.02);
+.Email:hover, .github:hover {
+    transform: scale(1,02);
+    filter: drop-shadow(0 0 6px rgb(255, 255, 255));
+
 }
 
 @keyframes fadeIn {
@@ -182,17 +175,17 @@ footer {
         font-size: 18px;
     }
 
-    .main {
+    main {
         flex-direction: column;
         padding: 10px;
         text-align: center;
     }
 
     .image {
-        height: 275px;
+        height: auto
     }
 
-    .main .text {
+    main .text {
       padding-top: 1px;
     }
 
@@ -212,15 +205,190 @@ footer {
     }
 
     footer {
-        flex-direction: column;
         text-align: center;
         height: auto;
         padding: 20px;
     }
 
-    .footerright img {
-        height: 180px;
-        width: auto;
-        margin-top: 15px;
+    .footerleft {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+
+@media only screen and (min-width: 1650px) {
+
+    main {
+        width: 75%;          
+        margin: 50px auto;
+    }
+
+    .intronimg {
+        gap: 4rem;          
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .intronimg img {
+        width: 750px;       
+        max-width: 90%;
+        height: auto;
+    }
+
+    h2 {
+        font-size: 70px;      
+    }
+
+    .profession {
+        font-size: 32px;
+    }
+
+    .button {
+        font-size: 32px;
+        padding: 14px 60px;
+    }
+
+    .p {
+        font-size: 22px;
+        line-height: 1.7;
+        max-width: 950px;
+    }
+
+    /* Squares */
+    .squares {
+        flex-direction: row;   
+        gap: 3.5rem;
+        justify-content: center;
+    }
+
+    .edu,
+    .job {
+        width: 45%;
+        padding: 30px;
+    }
+
+    h3 {
+        font-size: 30px;
+    }
+
+    li {
+        font-size: 20px;
+    }
+
+    footer {
+        font-size: 26px;
+        padding: 35px;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1366px) {
+
+    /* HEADER */
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px;
+        font-size: 22px;
+    }
+
+    .logo {
+        font-size: 48px;
+    }
+
+    nav a {
+        font-size: 18px;
+        margin: 0 10px;
+    }
+
+    /* MAIN SECTION */
+    main {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        flex-wrap: wrap;         /* allow wrapping on smaller screens */
+        gap: 1.5rem;
+        max-width: 100%;
+        margin: 40px auto;
+        box-sizing: border-box;
+    }
+
+    /* Intro image + text container */
+    .intronimg {
+        display: flex;
+        flex-wrap: wrap;         /* stack on smaller width */
+        align-items: center;     /* vertical alignment */
+        justify-content: center; /* center horizontally */
+        gap: 2rem;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .intronimg img {
+        width: 100%;
+        max-width: 650px;        /* responsive max size */
+        height: auto;
+        display: block;
+    }
+
+    .text {
+        flex: 1 1 50%;           /* flexible text width */
+        max-width: 600px;        /* prevent overflow */
+        box-sizing: border-box;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    .profession {
+        font-size: 20px;
+    }
+
+    .button {
+        font-size: 22px;
+        padding: 10px 30px;
+    }
+
+    .p {
+        font-size: 16px;
+        line-height: 1.5;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    /* Squares (Education / Work) */
+    .squares {
+        flex-direction: column;  /* stack squares vertically */
+        gap: 1.5rem;
+        align-items: center;
+        padding: 15px;
+        width: 100%;
+    }
+
+    .edu,
+    .job {
+        width: 90%;
+        margin: 0 auto;
+        padding: 15px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    li {
+        font-size: 16px;
+    }
+
+    /* FOOTER */
+    footer {
+        font-size: 20px;
+        padding: 25px;
+        text-align: center;
+        height: auto;
     }
 }

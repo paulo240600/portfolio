@@ -1,9 +1,6 @@
-body {
-    background-image: url("../images/background.jpeg");
-    background-size: cover;     
-    background-position: center;  
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+body {    
+    background-position: center;
+    background-color: rgb(246, 246, 246);  
     opacity: 90%;
     animation: fadeUp 0.8s ease-in;
 }
@@ -29,6 +26,7 @@ header {
 }
 
 nav {
+    text-decoration: none;
     word-spacing: 50px;
 }
 
@@ -38,13 +36,13 @@ nav a {
 }
 
 nav a:hover {
-    text-decoration: underline;
+    text-decoration: none;
     filter: drop-shadow(0 0 6px rgb(255, 255, 255));
 }
 
-.main {        
+main {        
     display: flex;     
-    background-color: white;
+    background-color: rgb(246, 246, 246);
     width: 90%;
     margin: 40px auto;
     padding-top: 15px;
@@ -55,26 +53,30 @@ nav a:hover {
 }
 
 .fform {
-    background-color: rgb(165, 242, 246); 
+    color: white;
+    background-color: rgb(118, 3, 118);
     border-radius: 10px;
     border: 2px solid;
-    border-color: purple;
+    border-color: rgb(99, 171, 225);
     padding: 20px;
     width: 90%; 
-    margin-bottom: 10px;
+    margin-bottom: 50px;
     margin-top: 10px;
 }
 
 .fform:hover {
     transform: scale(1.01);
+    border-color: rgb(118, 3, 118);;
     filter: drop-shadow(0 0 6px rgba(118, 3, 118, 0.5));
+    background-color: rgb(64, 155, 226);
 }
 
 .sform {
-    background-color: rgb(165, 242, 246);
+    color: white;
+    background-color: rgb(118, 3, 118);
     border-radius: 10px;
     border: 2px solid;
-    border-color: purple;
+    border-color: rgb(99, 171, 225);
     padding: 20px;
     width: 90%;
     margin-bottom: 10px;
@@ -82,32 +84,27 @@ nav a:hover {
 
 .sform:hover {
     transform: scale(1.01);
+    border-color: rgb(118, 3, 118);;
     filter: drop-shadow(0 0 6px rgba(118, 3, 118, 0.5));
+    background-color: rgb(64, 155, 226);
 }
 
 footer {
-    display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: black;
     color: white;
-    padding-left: 1rem;
     height: 0;
     font-size: 25px;
     border-radius: 10px;
-    height: 300px;
+    height: 390px;
     font-size: 25px;
-}
-
-.footerright img {
-    height: 350px;
-    width: 300px;
-    float: right;
-    align-items: center;
 }
 
 .footerleft {
     margin-top: 1px;
+    padding-left: 20px;
+    padding-top: 10px;
 }
 
 #allr {
@@ -115,16 +112,16 @@ footer {
     margin-bottom: 18px;
 }
 
-.Email {
+.Email, .github {
     text-decoration: none; 
     color: white;            
 }
 
+.Email:hover, .github:hover {
+    transform: scale(1,02);
+    filter: drop-shadow(0 0 6px rgb(255, 255, 255));
 
-.footerright img:hover {
-    transform: scale(1.02);
 }
-
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -191,9 +188,7 @@ footer {
         padding: 20px;
     }
 
-    .footerright img {
-        height: 180px;
-        width: auto;
-        margin-top: 15px;
+    .footerleft {
+        padding: 0;
     }
 }
