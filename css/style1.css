@@ -89,10 +89,11 @@ h1 {
     border-radius: 8px;
     border-color: rgb(64, 155, 226);
     text-decoration: none; 
-    transition: all 0.3s ease;
     cursor: pointer;
     margin-top: 45px;
     margin-right: 27px;
+    box-shadow: 0 0 5px rgb(118, 3, 118);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
 }
 
 .button:hover {
@@ -100,6 +101,8 @@ h1 {
     background-color: rgb(64, 155, 226);
     border-color: purple;
     filter: drop-shadow(0 0 6px rgba(118, 3, 118, 0.5));
+    box-shadow: 0 0 20px 2px rgb(118, 3, 118);
+    transform: scale(1.011);
 }
 
 footer {
@@ -388,7 +391,6 @@ footer {
     footer {
         font-size: 20px;
         padding: 25px;
-        text-align: center;
         height: auto;
     }
 }

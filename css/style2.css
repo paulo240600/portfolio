@@ -62,13 +62,16 @@ main {
     width: 90%; 
     margin-bottom: 50px;
     margin-top: 10px;
+    box-shadow: 0 0 5px rgb(118, 3, 118);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
 }
 
 .fform:hover {
-    transform: scale(1.01);
     border-color: rgb(118, 3, 118);;
     filter: drop-shadow(0 0 6px rgba(118, 3, 118, 0.5));
     background-color: rgb(64, 155, 226);
+    box-shadow: 0 0 20px 2px rgb(118, 3, 118);
+    transform: scale(1.011);
 }
 
 .sform {
@@ -80,6 +83,8 @@ main {
     padding: 20px;
     width: 90%;
     margin-bottom: 10px;
+    box-shadow: 0 0 5px rgb(118, 3, 118);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
 }
 
 .sform:hover {
@@ -87,6 +92,8 @@ main {
     border-color: rgb(118, 3, 118);;
     filter: drop-shadow(0 0 6px rgba(118, 3, 118, 0.5));
     background-color: rgb(64, 155, 226);
+    box-shadow: 0 0 20px 2px rgb(118, 3, 118);
+    transform: scale(1.011);
 }
 
 footer {

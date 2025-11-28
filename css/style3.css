@@ -85,16 +85,18 @@ h2 {
     border-radius: 8px;
     border-color: rgb(64, 155, 226);
     text-decoration: none; 
-    transition: all 0.3s ease;
     cursor: pointer;
     margin-top: 10px;
+    box-shadow: 0 0 5px rgb(118, 3, 118);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
 }
 
 .button:hover {
-    transform: scale(1.02);
     background-color: rgb(64, 155, 226);
     border-color: purple;
     filter: drop-shadow(0 0 6px rgba(118, 3, 118, 0.5));
+    box-shadow: 0 0 20px 2px rgb(118, 3, 118);
+    transform: scale(1.011);
 }
 
 .p {
@@ -151,6 +153,8 @@ h4:hover {
     border-radius: 10px;
     border: 3px solid;
     border-color: rgb(99, 171, 225);
+    box-shadow: 0 0 5px rgb(118, 3, 118);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
 }
 
 .job {
@@ -162,13 +166,16 @@ h4:hover {
     border-radius: 10px;
     border: 3px solid;
     border-color: rgb(99, 171, 225);
+    box-shadow: 0 0 5px rgb(118, 3, 118);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
 }
 
 .edu:hover, .job:hover {
-    transform: translateY(-5px) scale(1.02);
     border-color: rgb(118, 3, 118);;
     filter: drop-shadow(0 0 6px rgba(118, 3, 118, 0.5));
     background-color: rgb(64, 155, 226);
+    box-shadow: 0 0 20px 2px rgb(118, 3, 118);
+    transform: scale(1.011);
 }
 
 h3 {
