@@ -4,120 +4,179 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cybersecurity Club - Events</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css" />
-   <!-- Favicon -->
-   <link rel="icon" type="images/x-icon" href="images/favicon-SJ.ico" />
+  <link rel="icon" type="images/x-icon" href="images/favicon-SJ.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <style>
+    :root {
+      --royal-blue: #002666;
+      --gold: #ffc107;
+      --white: #ffffff;
+      --light-yellow: #fff9e6;
+    }
+
+    h2, h3, h5, .card-title { color: var(--royal-blue); }
+    .card.event-card { background-color: var(--light-yellow); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .card a { color: var(--royal-blue); text-decoration: none; }
+    .card a:hover { color: var(--gold); }
+    .card-date { font-weight: bold; color: var(--royal-blue); }
+    main.section { background-color: #fffdf7; padding-top: 3rem; padding-bottom: 3rem; }
+    .footer-combined { background-color: var(--royal-blue); color: var(--white); border-top: 4px solid var(--gold); }
+    .footer-combined a img:hover { transform: scale(1.1); transition: 0.3s ease; }
+    .table thead { background-color: #fff8e1; color: var(--royal-blue); }
+    .table-striped tbody tr:nth-of-type(odd) { background-color: #fff9e6; }
+  </style>
 </head>
 <body>
   <!-- Header -->
   <header class="site-header">
     <div class="container">
-      <h1 class="logo">Cybersecurity Club</h1>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="resources.html">Resources</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="https://www.eccouncil.org/" target="_blank">EC-Council</a></li>
-        </ul>
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand logo" href="index.html">Cybersecurity Club</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavEvents"
+          aria-controls="navbarNavEvents" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavEvents">
+          <ul class="navbar-nav ms-auto main-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item active"><a class="nav-link" href="events.html">Events</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://www.eccouncil.org/" target="_blank">EC-Council</a></li>
+          </ul>
+        </div>
       </nav>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main>
-    <div class="container">
-      <!-- Events Section -->
-      <section class="events-box">
-        <div class="events-columns">
-          <!-- Left Column: Upcoming Events -->
-          <div class="event-column">
-            <h2>Upcoming Events</h2>
-            <ul class="event-list">
-              <li>
-                <strong>Ethical Hacking Workshop</strong><br>
-                Workshop<br>
-                February 15, 2025<br>
-                2:00 PM - 4:00 PM<br>
-                Computer Lab B-201<br>
-                Learn the basics of ethical hacking and penetration testing techniques.
-              </li>
-              <li>
-                <strong>CTF Competition Prep</strong><br>
-                Competition<br>
-                February 22, 2025<br>
-                1:00 PM - 3:00 PM<br>
-                Room A-105<br>
-                Prepare for upcoming Capture The Flag competitions with team practice.
-              </li>
-              <li>
-                <strong>Industry Guest Speaker</strong><br>
-                Speaker<br>
-                March 1, 2025<br>
-                3:00 PM - 4:30 PM<br>
-                Auditorium<br>
-                Cybersecurity professional from IBM will discuss career paths and trends.
-              </li>
-            </ul>
-          </div>
+  <!-- Events Content -->
+  <main class="section">
+    <div class="container events-container">
+      <h2>Upcoming Events</h2>
+      <p class="intro">Join our workshops, seminars, and competitions to develop real-world cybersecurity skills!</p>
 
-          <!-- Right Column: Regular Meetings -->
-          <div class="event-column meeting-box">
-            <h2>Regular Meeting Schedule</h2>
-            <p>
-              Weekly Meetings<br>
-              Every Thursday: 2:00 PM - 3:30 PM<br>
-              Location: Computer Science Building, Room B-201<br>
-              Format: In-person with virtual option available
-            </p>
-            <img src="images/meeting-photo.jpg" alt="Meeting Photo" class="meeting-photo">
-            
-            <div class="expect-box">
-              <h3>What to Expect</h3>
-              <ul>
-                <li>Interactive workshops and hands-on lab sessions</li>
-                <li>Guest speakers from cybersecurity industry</li>
-                <li>Team-building activities and networking opportunities</li>
-                <li>Competition preparation and skill-building exercises</li>
-                <li>Career guidance and certification pathways</li>
-              </ul>
+      <!-- Event Cards -->
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 mb-4">
+          <div class="card event-card gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal" 
+               data-title="Cybersecurity Workshop" data-caption="Hands-on lab learning for beginners and advanced students.">
+            <img class="card-img-top img-fluid" src="images/CyberWorkshop.jpg" alt="Event 1">
+            <div class="card-body">
+              <h5 class="card-title">Cybersecurity Workshop</h5>
+              <p class="card-text">Hands-on lab learning for beginners and advanced students.</p>
+              <p class="card-date">Date: Nov 30, 2025</p>
             </div>
           </div>
         </div>
-      </section>
-
-      <!-- Join Us Section -->
-      <section class="join-wow">
-        <div class="join-container">
-          <div class="join-left">
-            <h2>Join the Cybersecurity Club</h2>
-            <p>Ready to level up your skills, connect with pros, and defend the digital frontier? This is your tribe. This is your mission.</p>
-
-            <ul class="join-features">
-              <li>Expert-led workshops & guest speakers</li>
-              <li>Real-world Capture the Flag (CTF) challenges</li>
-              <li>Peer collaboration & mentorship</li>
-              <li>Exam prep: Security+, CEH & more</li>
-            </ul>
-
-            <a href="contact.html" class="btn join-wow-btn">Become a Member</a>
-          </div>
-
-          <div class="join-right">
-            <img src="images/join-cyber.png" alt="Cyber Club Graphic" />
+        <div class="col-12 col-sm-6 col-md-4 mb-4">
+          <div class="card event-card gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal" 
+               data-title="CTF Competition" data-caption="Team-based Capture-the-Flag challenge for all skill levels.">
+            <img class="card-img-top img-fluid" src="images/CTF_1.jpg" alt="Event 2">
+            <div class="card-body">
+              <h5 class="card-title">CTF Competition</h5>
+              <p class="card-text">Team-based Capture-the-Flag challenge for all skill levels.</p>
+              <p class="card-date">Date: Dec 10, 2025</p>
+            </div>
           </div>
         </div>
-      </section>
+        <div class="col-12 col-sm-6 col-md-4 mb-4">
+          <div class="card event-card gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal" 
+               data-title="Guest Speaker: EC-Council" data-caption="Learn about the latest trends in cybersecurity from industry experts.">
+            <img class="card-img-top img-fluid" src="images/GuestSpeaker.jpeg" alt="Event 3">
+            <div class="card-body">
+              <h5 class="card-title">Guest Speaker: EC-Council</h5>
+              <p class="card-text">Learn about the latest trends in cybersecurity from industry experts.</p>
+              <p class="card-date">Date: Dec 20, 2025</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event Table -->
+      <h3 class="mt-5">Event Schedule</h3>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped table-sm">
+          <thead class="table-light">
+            <tr>
+              <th>Event</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cybersecurity Workshop</td>
+              <td>Nov 30, 2025</td>
+              <td>10:00 AM - 1:00 PM</td>
+              <td>Room 101</td>
+            </tr>
+            <tr>
+              <td>CTF Competition</td>
+              <td>Dec 10, 2025</td>
+              <td>2:00 PM - 5:00 PM</td>
+              <td>Lab 202</td>
+            </tr>
+            <tr>
+              <td>Guest Speaker: EC-Council</td>
+              <td>Dec 20, 2025</td>
+              <td>12:00 PM - 1:30 PM</td>
+              <td>Auditorium</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </main>
 
+  <!-- Lightbox Modal -->
+  <div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 id="lightboxModalLabel"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img id="lightboxImage" class="img-fluid" src="" alt="">
+          <p id="lightboxCaption" class="mt-2"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2025 Cybersecurity Club. All rights reserved.</p>
+  <footer class="footer-combined" style="background-color: var(--royal-blue); color: var(--white); padding: 1.5rem 0; margin-top: 2rem; border-top: 4px solid var(--gold); box-shadow: 0 -2px 8px rgba(0,0,0,0.2);">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div class="d-flex align-items-center mb-3 mb-md-0">
+        <img src="images/logo.png" alt="Website Logo" class="footer-logo me-3" style="width:60px; height:auto;">
+        <div>
+          <p class="mb-1">Designed by: Group 2</p>
+          <p>Team members: Ngan Dinh, Sinai Hernandez, Paulo Quiroz Bayona, Oscar Anoruo</p>
+        </div>
+      </div>
+      <div class="text-md-end">
+        <p class="mb-1">Cybersecurity Club</p>
+        <p class="mb-2 small">Follow us on social media:</p>
+        <a href="https://www.facebook.com" target="_blank" class="me-2">
+          <img src="images/facebook-logo.png" alt="Facebook logo" style="width:30px; height:30px;">
+        </a>
+        <a href="https://www.twitter.com" target="_blank" class="me-2">
+          <img src="images/twitter-logo.png" alt="Twitter logo" style="width:30px; height:30px;">
+        </a>
+        <a href="https://www.linkedin.com" target="_blank">
+          <img src="images/linkedin-logo.png" alt="LinkedIn logo" style="width:30px; height:30px;">
+        </a>
+        <p class="mt-2 mb-0 small">&copy; 2025 Cybersecurity Club. All rights reserved.</p>
+      </div>
     </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts/script.js"></script>
 </body>
 </html>

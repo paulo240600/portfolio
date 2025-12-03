@@ -1,5 +1,5 @@
 /* =========================================
-   CSS Reset
+   CSS Reset & Global
    ========================================= */
    body, header, nav, main, footer, h1, h2 {
     margin: 0;
@@ -7,9 +7,12 @@
     border: 0;
   }
   
-  /* =========================================
-     Global Color Palette
-     ========================================= */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
   :root {
     --royal-blue: #0B3D91;
     --gold: #FFD700;
@@ -17,44 +20,12 @@
     --dark-gray: #333333;
   }
   
-  /* =========================================
-     Global Reset & Body Styling
-     ========================================= */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
   body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: var(--dark-gray);
     background-color: var(--white);
-    animation: fadeUp 0.8s ease-in;
   }
-
-  @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
   
   .container {
     width: 90%;
@@ -82,12 +53,20 @@
     gap: 1rem;
     justify-content: flex-end;
     margin-top: -1.5rem;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+  
+  .main-nav li {
+    margin: 0;
   }
   
   .main-nav a {
     color: var(--white);
     text-decoration: none;
     font-weight: bold;
+    font-size: 1rem !important;
+    padding: 0.25rem 0.5rem;
     transition: color 0.3s ease;
   }
   
@@ -95,64 +74,67 @@
     color: var(--gold);
   }
   
+  @media (max-width: 768px) {
+    .main-nav ul {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .main-nav a {
+      font-size: 0.95rem !important;
+    }
+  }
+  
   /* =========================================
      Hero Section
      ========================================= */
   .hero {
-    background-image: url("../images/hero-placeholder.jpg");
-    background-size: cover;
-    background-position: center;
     height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--white);
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
   }
   
-  .hero::after {
-    content: "";
+  .hero-overlay {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: rgba(11, 61, 145, 0.6);
+    z-index: 2;
+  }
+  
+  .hero-images {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+  }
+  
+  .hero-img {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(11, 61, 145, 0.6);
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+  }
+  
+  .hero-img.active {
+    opacity: 1;
   }
   
   .hero-content {
+    z-index: 3;
     position: relative;
-    z-index: 1;
-  }
-  
-  .hero h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  /* Call-to-Action Button */
-  .btn {
-    background-color: var(--gold);
-    color: var(--royal-blue);
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .btn:hover {
-    background-color: #e6c200;
   }
   
   /* =========================================
-     General Sections
+     Sections
      ========================================= */
   .section {
     padding: 3rem 0;
@@ -171,204 +153,133 @@
   }
   
   /* =========================================
-     Events List
+     Why Join Us
      ========================================= */
-  .events ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .events li {
-    margin-bottom: 0.5rem;
-  }
-  
-  /* =========================================
-     Footer
-     ========================================= */
-  .site-footer {
-    background-color: var(--royal-blue);
-    color: var(--white);
-    text-align: center;
-    padding: 1.5rem 0;
-    margin-top: 2rem;
-  }
-  
-  /* =========================================
-     Contact Info Section
-     ========================================= */
-  .contact-info {
+  .why-join-box {
+    background-color: #f4f4f4;
+    padding: 2.5rem;
+    border-radius: 12px;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
     text-align: left;
-    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.7s ease forwards;
   }
   
-  .contact-info h3 {
+  @keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .why-join-box h3 {
     color: var(--royal-blue);
-    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid var(--gold);
+    padding-left: 0.75rem;
   }
   
-  .contact-grid {
-    display: flex;
-    flex-wrap: wrap;
+  .why-join-box p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+  }
+  
+  /* =========================================
+     Stats Section
+     ========================================= */
+  .stats-section {
+    background-color: #f4f4f4;
+    padding: 4rem 2rem;
+    margin-top: 3rem;
+  }
+  
+  .stats-title {
+    color: var(--royal-blue);
+    font-size: 2.1rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
-    margin-top: 1.5rem;
   }
   
-  .contact-box {
-    flex: 1;
-    min-width: 280px;
-    background-color: #f5f5f5;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  .stat-box {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .contact-box ul {
-    list-style: none;
-    padding-left: 0;
+  .stat-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 22px rgba(0,0,0,0.1);
   }
   
-  .contact-box li {
-    margin-bottom: 1rem;
-    line-height: 1.5;
-  }
-  
-  .contact-box a {
+  .stat-number {
     color: var(--royal-blue);
-    text-decoration: none;
+    font-size: 2.4rem;
+    font-weight: bold;
   }
   
-  .contact-box a:hover {
-    text-decoration: underline;
+  .stat-label {
+    color: var(--dark-gray);
+    font-size: 1.15rem;
+    margin-top: .5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  
+  @media (max-width: 480px) {
+    .stats-grid { grid-template-columns: 1fr; }
   }
   
   /* =========================================
-     Contact Form Styling
+     Show / Hide Info
      ========================================= */
-  .form-section {
-    background-color: #f9f9f9;
-    padding: 2rem;
-    margin-top: 2rem;
+  #club-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 1.5rem auto;
+    background-color: #f4f4f4;
+    padding: 1rem 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    text-align: left;
+    max-width: 600px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   }
   
-  .contact-form {
-    margin-top: 1.5rem;
-  }
-  
-  .form-row {
+  .btn-group {
+    margin-top: 1rem;
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
   }
   
-  .form-group {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-  }
-  
-  .form-group label {
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: var(--royal-blue);
-  }
-  
-  .form-group input,
-  .form-group textarea {
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-family: inherit;
-    transition: border-color 0.3s ease;
-  }
-  
-  .form-group input:focus,
-  .form-group textarea:focus {
-    border-color: var(--royal-blue);
-    outline: none;
-  }
-  
-  .contact-form .btn {
+  #show-btn,
+  #hide-btn {
     background-color: var(--royal-blue);
     color: var(--white);
+    padding: 0.45rem 0.9rem;
     border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: bold;
+    border-radius: 2px;
     cursor: pointer;
+    font-weight: bold;
+    font-size: 0.85rem;
     transition: background-color 0.3s ease;
   }
   
-  .contact-form .btn:hover {
+  #show-btn:hover,
+  #hide-btn:hover {
     background-color: #072e6d;
   }
-  
-  /* =========================================
-     Events Page Styling
-     ========================================= */
-  .events-section ul.event-list {
-    list-style: none;
-    padding: 0;
-    margin-top: 1rem;
-  }
-  
-  .events-section ul li {
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
-  }
- /* =========================================
-   Events Section Columns - Spacing Update
-   ========================================= */
-.events-box {
-  background-color: #f4f4f4;
-  padding: 2.5rem;          /* consistent with other pages */
-  border-radius: 12px;
-  margin: 3rem 0;           /* match About/Resource spacing */
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-  text-align: left;
-}
-
-.events-columns {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;          /* stack columns on smaller screens */
-}
-
-.event-column {
-  flex: 1;
-  min-width: 300px;         /* prevent columns from getting too narrow */
-}
-
-.meeting-box img.meeting-photo {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin: 1rem 0;
-}
-
-.expect-box h3 {
-  color: var(--royal-blue);
-  margin-bottom: 0.5rem;
-}
-
-.expect-box ul {
-  list-style: disc inside;
-  padding-left: 0;
-  line-height: 1.5;
-}
-
-/* Responsive for mobile */
-@media (max-width: 768px) {
-  .events-columns {
-    flex-direction: column;
-  }
-}
-
   
   /* =========================================
      Join Us Section
@@ -379,7 +290,7 @@
     padding: 4rem 2rem;
     border-radius: 12px;
     margin-top: 4rem;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
   }
   
   .join-container {
@@ -436,9 +347,9 @@
     font-weight: bold;
     text-decoration: none;
     font-size: 1.1rem;
-    transition: background-color 0.3s ease;
     display: inline-block;
     border: none;
+    transition: background-color 0.3s ease;
   }
   
   .join-wow-btn:hover {
@@ -454,30 +365,28 @@
     max-width: 100%;
     height: auto;
     border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
   }
   
-  /* Responsive */
   @media (max-width: 768px) {
     .join-container {
       flex-direction: column-reverse;
       text-align: center;
     }
-  
     .join-left h2 {
       font-size: 2rem;
     }
   }
   
   /* =========================================
-     Upcoming Events Box Styling
+     Events Section
      ========================================= */
   .events-box {
     background-color: #f4f4f4;
     padding: 2.5rem;
     border-radius: 12px;
     margin-bottom: 3rem;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
     text-align: left;
   }
   
@@ -485,6 +394,17 @@
     font-size: 2.3rem;
     color: var(--royal-blue);
     margin-bottom: 1.5rem;
+  }
+  
+  .events-columns {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .event-column {
+    flex: 1;
+    min-width: 300px;
   }
   
   .event-list {
@@ -508,8 +428,14 @@
     color: #666;
   }
   
+  @media(max-width: 768px) {
+    .events-columns {
+      flex-direction: column;
+    }
+  }
+  
   /* =========================================
-     Resource Page Styling
+     Resources Section
      ========================================= */
   .resource-grid {
     display: flex;
@@ -559,57 +485,39 @@
     text-decoration: underline;
   }
   
-  /* Call to Action Section */
-  .join-us-section {
-    background-color: #0B3D91;
-    color: #ffffff;
-    padding: 3rem 2rem;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 6px 18px rgba(11, 61, 145, 0.4);
-  }
-  
-  .join-us-section h2,
-  .join-us-section p {
-    color: #ffffff;
-  }
-  
-  .join-us-section .btn {
-    background-color: var(--gold);
-    color: var(--royal-blue);
-    padding: 0.75rem 2rem;
-    font-weight: bold;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-    border: none;
-  }
-  
-  .join-us-section .btn:hover {
-    background-color: #e6c200;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
+  @media(max-width: 768px) {
     .resource-grid {
       flex-direction: column;
       align-items: center;
     }
-  
     .resource-card {
       max-width: 100%;
     }
   }
   
   /* =========================================
-     About Page Styling
+     About Section
      ========================================= */
   .about-container {
     max-width: 900px;
     margin: 0 auto;
     text-align: left;
+  }
+  
+  .about-container h2 {
+    text-align: left;
+    font-weight: bold;
+    color: var(--royal-blue);
+    margin-bottom: 1rem;
+  }
+  
+  .about-container h3 {
+    text-align: left;
+    font-weight: bold;
+    color: var(--royal-blue);
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
   }
   
   .intro {
@@ -619,223 +527,246 @@
     line-height: 1.6;
   }
   
-  .mission, .values, .team {
+  .mission,
+  .values,
+  .team {
     margin-bottom: 3rem;
   }
   
-  .mission h3, .values h3, .team h3 {
-    color: var(--royal-blue);
-    margin-bottom: 1rem;
-    font-size: 1.6rem;
-    border-bottom: 2px solid var(--gold);
-    display: inline-block;
-    padding-bottom: 0.3rem;
-  }
-  
-  /* =========================================
-     Core Values Section
-     ========================================= */
-    /* ===== Core Values Section & About Page Headings ===== */
-.about-container h2 { /* About Us */
-    text-align: left;
-    font-weight: bold;
-    color: var(--royal-blue);
-    border-bottom: none; /* remove underline */
-    margin-bottom: 1rem;
-  }
-.about-container h3 {      /* Our Mission, Our Core Values, Meet the Team */
-    text-align: left;       /* align left like Contact page headings */
-    font-weight: bold;      /* bold text */
-    color: var(--royal-blue);
-    border-bottom: 2px solid var(--gold);
-    padding-bottom: 0.3rem;
-    margin-bottom: 1rem;
-}
-
-/* ===== Values Carousel Styling ===== */
-.values {
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-}
-
-.values .values-title {
+  .values-title {
     text-align: left !important;
     margin-bottom: 2rem;
     color: var(--royal-blue);
-}
-
-.values .container {
-    text-align: left; /* keeps carousel left-aligned */
-    padding-left: 0;
-}
-
-.value-box {
+  }
+  
+  .value-box {
     background-color: #f4f4f4;
     border-radius: 12px;
     padding: 2rem 1.5rem;
     max-width: 600px;
     margin: 0 auto;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    text-align: center; /* keep box content centered */
-}
-
-.value-box h4 {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+  }
+  
+  .value-box h4 {
     color: var(--royal-blue);
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
-}
-
-.value-box p {
+  }
+  
+  .value-box p {
     color: var(--dark-gray);
     font-size: 1.1rem;
-}
-
-/* Carousel arrows styling */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    filter: invert(25%) sepia(95%) saturate(1676%) hue-rotate(200deg) brightness(92%) contrast(90%);
-}
-.carousel-inner {
-  display: flex; 
-  gap: 1rem; /* space between value boxes */
-  justify-content: flex-start; /* align items to left */
-}
-    
-  /* =========================================
-     Meet the Team Section
-     ========================================= */
-  /* =========================================
-   Meet the Team Section - 2 Left / 2 Right
-   ========================================= */
-.team {
-  padding: 3rem 0;
-  text-align: left;
-}
-
-.team h3 {
-  color: var(--royal-blue);
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.team-members {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns for desktop */
-  gap: 1.5rem;
-  align-items: stretch; /* equal height */
-}
-
-/* Individual Member Box */
-.member {
-  display: flex;
-  flex-direction: row;
-  border: 1px solid #ccc;
-  padding: 1rem 1.2rem;
-  border-radius: 10px;
-  background-color: #fafafa;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.member:hover {
-  box-shadow: 0 6px 15px rgba(11, 61, 145, 0.3);
-  transform: translateY(-3px);
-}
-
-/* Initials Circle */
-.initials {
-  background-color: var(--royal-blue);
-  color: var(--white);
-  font-weight: 700;
-  font-size: 1.4rem;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 1rem;
-  user-select: none;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
-/* Member Info */
-.member-info h4 {
-  margin: 0;
-  color: var(--royal-blue);
-  font-size: 1.1rem;
-}
-
-.member-info p {
-  margin: 0.25rem 0 0;
-  font-size: 0.95rem;
-  color: var(--dark-gray);
-}
-
-/* Responsive Layout */
-@media (max-width: 992px) {
-  .team-members {
-    grid-template-columns: 1fr; /* single column on tablets/small screens */
   }
-}
-/* =========================================
-   Multimedia Styling
-   ========================================= */
-.media-audio,
-.media-video {
-  text-align: left;
-  margin: 2rem 0;
-}
-
-.media-audio audio,
-.media-video video {
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-}
-
-/* =========================================
-   Show / Hide Buttons
-   ========================================= */
-.btn-group {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-#show-btn,
-#hide-btn {
-  background-color: var(--royal-blue);
-  color: var(--white);
-  padding: 0.6rem 1.2rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-#show-btn:hover,
-#hide-btn:hover {
-  background-color: #072e6d;
-}
-
-.hidden {
-  display: none !important;
-}
-#club-info {
-  display: flex;
-  justify-content: center;  /* centers horizontally */
-  align-items: center;      /* centers vertically (optional if it’s short text) */
-  text-align: center;
-  margin: 1.5rem auto;      /* centers block horizontally */
-  background-color: #f4f4f4;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  max-width: 600px;         /* keeps it from stretching too wide */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
+  
+  /* =========================================
+     Team Section
+     ========================================= */
+  .team {
+    padding: 3rem 0;
+    text-align: left;
+  }
+  
+  .team h3 {
+    color: var(--royal-blue);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .team-members {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .member {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #ccc;
+    padding: 1rem 1.2rem;
+    border-radius: 10px;
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .member:hover {
+    box-shadow: 0 6px 15px rgba(11,61,145,0.3);
+    transform: translateY(-3px);
+  }
+  
+  .initials {
+    background-color: var(--royal-blue);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.4rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    user-select: none;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  
+  .member-info h4 {
+    margin: 0;
+    color: var(--royal-blue);
+    font-size: 1.1rem;
+  }
+  
+  .member-info p {
+    margin: 0.25rem 0 0;
+    font-size: 0.95rem;
+    color: var(--dark-gray);
+  }
+  
+  @media(max-width: 992px) {
+    .team-members {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* =========================================
+     Footer
+     ========================================= */
+  .site-footer,
+  .footer-combined {
+    background-color: var(--royal-blue);
+    color: var(--white);
+    border-top: 4px solid var(--gold);
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+    font-size: 0.95rem;
+  }
+  
+  .site-footer a.footer-link {
+    color: #f0f0f0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .site-footer a.footer-link:hover {
+    color: var(--gold);
+  }
+  
+  .site-footer i {
+    font-size: 1rem;
+  }
+  
+  /* =========================================
+     Event Card Animations
+     ========================================= */
+  .event-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+  }
+  
+  .row .event-card:nth-child(1) { animation-delay: 0.1s; }
+  .row .event-card:nth-child(2) { animation-delay: 0.3s; }
+  .row .event-card:nth-child(3) { animation-delay: 0.5s; }
+  
+  /* =========================================
+     Weekly Meetings CTA Box
+     ========================================= */
+  .meeting-cta-box {
+    background-color: #f4f4f4;
+    max-width: 700px;
+    margin: 2rem auto;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .meeting-cta-box:hover,
+  .meeting-cta-box:focus-within {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+  }
+  
+  .meeting-cta-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+    color: var(--royal-blue);
+  }
+  
+  .meeting-cta-box p {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+    color: var(--dark-gray);
+  }
+  
+  .meeting-info {
+    background-color: #e9f5ff;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    color: var(--royal-blue);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    margin-top: 1rem;
+    transition: all 0.4s ease;
+    text-align: center;
+  }
+  
+  #toggle-btn {
+    background-color: var(--royal-blue);
+    color: var(--white);
+    padding: 0.55rem 1.2rem;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  #toggle-btn:hover,
+  #toggle-btn:focus {
+    background-color: #072e6d;
+    outline: none;
+    transform: scale(1.05);
+  }
+  
+  /* =========================================
+     Carousel Images
+     ========================================= */
+  .carousel-inner img {
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  
+  /* =========================================
+     Cyber Tip Section
+     ========================================= */
+  .section.bg-light {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .section.bg-light:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  
+  /* =========================================
+     Thumbnails
+     ========================================= */
+  .thumbnail-img {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .thumbnail-img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  
