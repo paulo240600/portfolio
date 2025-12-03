@@ -1,2 +1,8 @@
 # portfolio
 Welcome to my Webpage Development Portfolio!
+
+The main purpose of this project is to build a website based on my portfolio. Since I am still a student and don’t have work experience in the field, most of the projects and information on this page come from the different classes I have taken so far, using HTML, CSS, PHP, and SQL.
+
+Regarding the layout of this portfolio, the color palette is based on the colors in my logo, which are purple and sky blue. Likewise, the website has a white background and a black header and footer, which are colors that go well with most palettes. The reason behind choosing purple and sky blue is that they are my two favorite colors. The purpose of the layout is to guide the user to the portfolio page since it is the main content I want visitors to see when they access my site.
+
+One of the main challenges I had while building this website was using media queries. It has been difficult for me to use this CSS feature efficiently. However, with help from other students who are pursuing the same degree and from one of my professors who introduced me to HTML, I have been able to solve these problems and learn from their advice. Additionally, another challenge I faced was including my PHP projects. To do this, I need a server where I can run and test the projects. The solution I found was to include screenshots of the projects, trying to show as much as possible about the different features of the websites I built using PHP.
