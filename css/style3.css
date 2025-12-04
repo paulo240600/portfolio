@@ -27,6 +27,8 @@ header {
 
 .logo {
     font-size: 50px;
+    color: white;
+    text-decoration: none;
 }
 
 .logo:hover {
