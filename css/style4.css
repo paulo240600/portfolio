@@ -16,6 +16,15 @@ header {
     border-radius: 10px;
 }
 
+.pqheader {
+    color: white;
+    text-decoration: none;
+}
+
+.pqheader:hover {
+    cursor: pointer;
+}
+
 .logo {
     font-size: 50px;
 }
